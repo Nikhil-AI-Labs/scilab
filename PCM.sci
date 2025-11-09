@@ -7,7 +7,7 @@ samples = 30;
 t = 0:0.001:3;
 mt = 8*sin(2*%pi*t);
 ts = 1/samples;
-n1 = 0:ts:3;
+n1 = 0:ts:1;
 s = 8*sin(2*%pi*n1);
 // Define quantization parameters
 L = 2^n;                    // Number of levels
@@ -68,7 +68,7 @@ title('Message Signal');
 xlabel('Time (seconds)');
 ylabel('Amplitude (V)');
 a = gca();
-a.data_bounds = [0, -10; 3, 10];
+a.data_bounds = [0, -10; 1.5, 10];
 xgrid;
 subplot(2,1,2);
 plot2d3('gnn', n1, s, style=2);
@@ -76,7 +76,7 @@ title('Sampled Signal');
 xlabel('Time (seconds)');
 ylabel('Amplitude (V)');
 a = gca();
-a.data_bounds = [0, -10; 3, 10];
+a.data_bounds = [0, -10; 1, 10];
 xgrid;
 
 scf(1)
@@ -87,7 +87,7 @@ title('Quantized Signal');
 xlabel('Time (seconds)');
 ylabel('Amplitude (V)');
 a = gca();
-a.data_bounds = [0, -10; 3, 10];
+a.data_bounds = [0, -10; 1, 10];
 xgrid;
 subplot(2,1,2);
 x_coded = 1:length(coded);
